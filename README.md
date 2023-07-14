@@ -7,4 +7,6 @@ Um simples CRUD em MVC com PDO Respository
 - HTML5
 - CSS3
 - PHP 8.2
+- Composer para utilizar autoload
 - Banco de dados Sqlite
+- Docker para infra de desenvolvimento
