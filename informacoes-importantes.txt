@@ -1,0 +1,48 @@
+Para utilizar o autoload do composer
+1 - criar composer.json na raiz no projeto
+conteúdo de composer.json
+{
+    "autoload": {
+        "psr-4": {
+            "Alura\\Mvc\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">8.1",
+        "ext-pdo": "*"
+    }
+}
+
+2 - executar o comando dentro da raiz do projeto aonde o arquivo composer.json está localizado
+    composer dumpautoload
+
+
+Para o sistema ser executado de forma correta com o docker pelo servidor do php
+1 - indicar o caminho da pasta raiz do projeto no arquivo docker-composer.yml
+    comentar o caminho original para que o servidor seja utilizado futuramente e inserir nova linha 
+    contendo o caminho do projeto
+  www_edson:
+    container_name: www_edson
+    build: .
+    ports:
+      - 8085:80
+    volumes:
+      #- ./www/:/var/www/html
+      - ./www/Alura/MVC/aluraplay:/var/www/html
+
+2 - descobrir o ip do container docker que roda o php
+    docker exec <nome do conteiner> cat /etc/hosts
+    
+    nesse caso específico: docker exec www_edson cat /etc/hosts
+
+3 - entrar no container que roda o php
+    docker exec -it <nome do container> /bin/bash
+    
+    nesse caso específico: docker exec -it www_edson /bin/bash
+
+4 - para o servidor do php ouvir a pasta public
+    php -S <ip do container que roda o php>:<porta que ouvirá o sistema> -t public/
+ 
+    nesse caso específico: php -S 172.27.0.4:8085 -t public/
+
+No navegador informar o ip juntamente com a porta configurados no passo 3
