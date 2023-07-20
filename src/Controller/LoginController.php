@@ -28,9 +28,12 @@ class LoginController implements Controller
         $userData = $stmt->fetch(PDO::FETCH_ASSOC);
 
         $correctPassword = password_verify($password, $userData['password'] ?? '');
-        if($correctPassword === false){
+
+        if($correctPassword == false){
             header('Location: /login?success=0');
+            return;
         }
+        $_SESSION['logged'] = true;
         
         header('Location: /');
     }
