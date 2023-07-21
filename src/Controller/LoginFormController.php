@@ -7,7 +7,7 @@ class LoginFormController implements Controller
     public function processaRequisicao(): void
     {
 
-        if($_SESSION['logged'] === true){
+        if(array_key_exists('logged', $_SESSION) && $_SESSION['logged'] === true){
             header('Location: /');
             return;
         }
