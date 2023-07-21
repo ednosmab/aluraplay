@@ -6,6 +6,7 @@ namespace Alura\Mvc\Controller;
 
 use Alura\Mvc\Entity\Video;
 use Alura\Mvc\Repository\VideoRepository;
+use Alura\Mvc\Model\ImageUpload\ImageUploadModel;
 
 class NewVideoController implements Controller
 {
@@ -26,7 +27,17 @@ class NewVideoController implements Controller
             return;
         }
 
-        $success = $this->videoRepository->add(new Video($url, $titulo));
+        $video = new Video($url, $titulo);
+
+        $imageFiles = $_FILES['image'];
+        $imageUploadModel = new ImageUploadModel($imageFiles['name'], $imageFiles['error'], $imageFiles['tmp_name']);
+        $isSave = $imageUploadModel->saveImage($video);
+
+        if(!$isSave){
+            $video->setFilePath(null);
+        }
+
+        $success = $this->videoRepository->add($video);
         if ($success === false) {
             header('Location: /?sucesso=0');
         } else {

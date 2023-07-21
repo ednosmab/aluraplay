@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Alura\Mvc\Controller;
 
 use Alura\Mvc\Entity\Video;
+use Alura\Mvc\Model\ImageUpload\ImageUploadModel;
 use Alura\Mvc\Repository\VideoRepository;
 
 class EditVideoController implements Controller
@@ -34,6 +35,10 @@ class EditVideoController implements Controller
 
         $video = new Video($url, $titulo);
         $video->setId($id);
+        
+        $imageFiles = $_FILES['image'];
+        $imageUploadModel = new ImageUploadModel($imageFiles['name'], $imageFiles['error'], $imageFiles['tmp_name']);
+        $imageUploadModel->saveImage($video);
 
         $success = $this->videoRepository->update($video);
 
