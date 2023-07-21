@@ -1,7 +1,7 @@
 ![Texto do seu parágrafo](https://github.com/ednosmab/aluraplay/assets/37445442/d7f54778-ca4a-4cb6-9c26-152840cb7acc)
 
 # aluraplay
-Um simples CRUD em MVC com PDO Respository
+Um simples CRUD em MVC com PDO Respository, serviço de login e upload de arquivos.
 
 ## Tecnologias utilizadas
 - HTML5
@@ -9,4 +9,3 @@ Um simples CRUD em MVC com PDO Respository
 - PHP 8.2
 - Composer para utilizar autoload
 - Banco de dados Sqlite
-- Docker para infra de desenvolvimento
