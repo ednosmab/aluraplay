@@ -40,3 +40,19 @@ Senha: 123456
 6- Após o envio do formulário com os dados preenchidos do vídeo, o sistema redirecionará para a tela inicial mostrando o novo vídeo que foi adicionado com sucesso
 ![6](https://github.com/ednosmab/aluraplay/assets/37445442/b29d8fa7-7138-4ea0-8e17-d4b188a0b546)
 ![6-2](https://github.com/ednosmab/aluraplay/assets/37445442/9cfc8cce-2b01-4033-8c5d-894bfdd62a32)
+
+### Adicionando vídeo via json
+#### Recomendado utilizar o Postaman para enviar a request
+Adicione o domínio: localhost
+
+Crie o cookie de sessão: PHPSESSID=<id da sessão criada após logar no sistema>; Path=/;
+* Necessário verificar o ID da sessão na opção Ferramentas do Desenvolvedor > Aplication > Storege > Cookies > http://localhost:8000 > Name: PHPSESSID > Value: id da sessão
+
+* Body > raw
+```
+{
+    "url": "https://www.youtube.com/embed/Qhk6xu53kho",
+    "title": "Logins seguros - Armazenando senhas corretamente | Dias de Dev"
+}
+```
+ Caso o envio ocorra com sucesso a resposta do cabeçalho será 201 - corresponte a criado
