@@ -2,6 +2,8 @@
 
 namespace Alura\Mvc\Model\ImageUpload;
 
+use finfo;
+
 class ImageUploadModel
 {
     public function __construct(
@@ -15,16 +17,21 @@ class ImageUploadModel
     
     public function saveImage($video): bool
     {
-        $safeFileName = pathinfo($this->imageName, PATHINFO_BASENAME);
-
-        if($this->imageError === UPLOAD_ERR_OK){
-            $success =  move_uploaded_file(
-                $this->imageTmpName,
-                __DIR__ . '/../../../public/img/uploads/' . $safeFileName
-            );
-            $video->setFilePath($safeFileName);
-            return $success;
+        $finfo = new finfo(FILEINFO_MIME_TYPE);
+        $mimeType = $finfo->file($this->imageTmpName);
+        
+        if(str_starts_with($mimeType, 'image/')){
+            $safeFileName = uniqid('upload_') . '_' . pathinfo($this->imageName, PATHINFO_BASENAME);
+            if($this->imageError === UPLOAD_ERR_OK){
+                $success =  move_uploaded_file(
+                    $this->imageTmpName,
+                    __DIR__ . '/../../../public/img/uploads/' . $safeFileName
+                );
+                $video->setFilePath($safeFileName);
+                return $success;
+            }
         }
+
         return false;
     }
 
