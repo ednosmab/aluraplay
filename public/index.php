@@ -8,7 +8,12 @@ use Alura\Mvc\Repository\VideoRepository;
 require_once __DIR__ . '/../vendor/autoload.php';
 
 session_start();
-session_regenerate_id();
+if (isset($_SESSION['logado'])) {
+    $originalInfo = $_SESSION['logado'];
+    unset($_SESSION['logado']);
+    session_regenerate_id();
+    $_SESSION['logado'] = $originalInfo;
+}
 
 
 $dbPath = __DIR__ . '/../banco.sqlite';
