@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Alura\Mvc\Repository;
+namespace Alura\MVC\Repository;
 
-use Alura\Mvc\Entity\Video;
+use Alura\MVC\Entity\Video;
 use PDO;
 
 class VideoRepository

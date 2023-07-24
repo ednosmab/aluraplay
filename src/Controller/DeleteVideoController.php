@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Alura\Mvc\Controller;
+namespace Alura\MVC\Controller;
 
-use Alura\Mvc\Repository\VideoRepository;
+use Alura\MVC\Repository\VideoRepository;
 
 class DeleteVideoController implements Controller
 {

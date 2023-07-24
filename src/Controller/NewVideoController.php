@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Alura\Mvc\Controller;
+namespace Alura\MVC\Controller;
 
-use Alura\Mvc\Entity\Video;
-use Alura\Mvc\Repository\VideoRepository;
-use Alura\Mvc\Model\ImageUpload\ImageUploadModel;
+use Alura\MVC\Entity\Video;
+use Alura\MVC\Repository\VideoRepository;
+use Alura\MVC\Model\ImageUpload\ImageUploadModel;
 
 class NewVideoController implements Controller
 {

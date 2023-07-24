@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use Alura\Mvc\Controller\Error404Controller;
-use Alura\Mvc\Repository\VideoRepository;
+use Alura\MVC\Controller\Error404Controller;
+use Alura\MVC\Repository\VideoRepository;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 

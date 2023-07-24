@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Alura\Mvc\Controller;
+namespace Alura\MVC\Controller;
 
 class Error404Controller implements Controller
 {

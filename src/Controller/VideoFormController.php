@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Alura\Mvc\Controller;
+namespace Alura\MVC\Controller;
 
-use Alura\Mvc\Entity\Video;
-use Alura\Mvc\Repository\VideoRepository;
+use Alura\MVC\Entity\Video;
+use Alura\MVC\Repository\VideoRepository;
 
 class VideoFormController implements Controller
 {

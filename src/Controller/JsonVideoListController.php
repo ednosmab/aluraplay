@@ -1,12 +1,10 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Alura\MVC\Controller;
 
 use Alura\MVC\Repository\VideoRepository;
 
-class VideoListController implements Controller
+class JsonVideoListController implements Controller
 {
     public function __construct(private VideoRepository $videoRepository)
     {
@@ -14,9 +12,14 @@ class VideoListController implements Controller
 
     public function processaRequisicao(): void
     {
-        
-        
+
+        echo "oi";
+        exit();
         $videoList = $this->videoRepository->all();
-        require_once __DIR__ . '/../../views/video-list.php';
+
+        var_dump($videoList);
+
+        exit();
+        echo json_encode($videoList);
     }
 }

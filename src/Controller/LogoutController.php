@@ -1,6 +1,6 @@
 <?php
 
-namespace Alura\Mvc\Controller;
+namespace Alura\MVC\Controller;
 
 class LogoutController implements Controller
 {

@@ -1,9 +1,8 @@
 <?php
 
-namespace Alura\Mvc\Controller;
+namespace Alura\MVC\Controller;
 
-use Alura\Mvc\Entity\Video;
-use Alura\Mvc\Repository\VideoRepository;
+use Alura\MVC\Repository\VideoRepository;
 
 class RemoverThumbController implements Controller
 {

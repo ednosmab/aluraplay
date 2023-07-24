@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Alura\Mvc\Entity;
+namespace Alura\MVC\Entity;
 
 class Video
 {
