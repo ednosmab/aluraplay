@@ -15,12 +15,14 @@ class ImageUploadModel
     
     public function saveImage($video): bool
     {
+        $fileTempName = pathinfo($this->imageName, PATHINFO_BASENAME);
+
         if($this->imageError === UPLOAD_ERR_OK){
             $success =  move_uploaded_file(
                 $this->imageTmpName,
-                __DIR__ . '/../../../public/img/uploads/' . $this->imageName
+                __DIR__ . '/../../../public/img/uploads/' . $fileTempName
             );
-            $video->setFilePath($this->imageName);
+            $video->setFilePath($fileTempName);
             return $success;
         }
         return false;
