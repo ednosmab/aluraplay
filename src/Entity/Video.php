@@ -38,6 +38,9 @@ class Video
 
     public function getFilePath(): ?string
     {
-        return $this->filePath;
+        if(isset($this->filePath)){
+            return $this->filePath;
+        }
+        return null;
     }
 }
