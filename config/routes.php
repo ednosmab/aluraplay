@@ -14,4 +14,5 @@ return [
     'GET|/logout' => Alura\MVC\Controller\LogoutController::class,
     'GET|/logout' => Alura\MVC\Controller\LogoutController::class,
     'GET|/videos-json' => Alura\MVC\Controller\JsonVideoListController::class,
+    'POST|/videos' => Alura\MVC\Controller\NewJsonVideoController::class,
 ];
