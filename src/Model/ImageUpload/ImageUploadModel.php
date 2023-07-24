@@ -1,6 +1,6 @@
 <?php
 
-namespace Alura\Mvc\Model\ImageUpload;
+namespace Alura\MVC\Model\ImageUpload;
 
 use finfo;
 
@@ -11,8 +11,7 @@ class ImageUploadModel
         private int $imageError,
         private string $imageTmpName
     )
-    {
-        
+    {  
     }
     
     public function saveImage($video): bool
