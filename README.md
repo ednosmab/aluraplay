@@ -10,6 +10,17 @@ Um simples CRUD em MVC com PDO Respository, serviço de login e upload de arquiv
 - Composer para utilizar autoload
 - Banco de dados Sqlite
 
+### Iniciando o sistema com o servidor embutido do PHP via localhost
+#### Via terminal
+$ php -S localhost:8000 -t public/
+
+#### Acessando o sistema via navegador
+http://localhost:8000
+
+#### Dados de acesso
+E-mail: edson@edson.com.br
+Senha: 123456
+
 ### Adicionando novo vídeo
 1- No menu superior escolher a opção de novo vídeo
 ![1](https://github.com/ednosmab/aluraplay/assets/37445442/64bc0d11-19c2-45a0-9f31-ea96de8cfde5)
